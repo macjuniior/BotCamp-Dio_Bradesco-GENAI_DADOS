@@ -17,9 +17,10 @@ Este documento integra o desafio de criação de um caderno temático voltado ao
 ## 2. Fontes Selecionadas
 Para esta atividade, foram utilizadas fontes baseadas nos ensinamentos de grandes mestres das finanças (Benjamin Graham, Warren Buffett, John Bogle e Morgan Housel):
 
-Benjamin Graham's Basic Tenets for Being a Successful Investor and Ours Too!, https://bfsg.com/benjamin-grahams-basic-tenets-for-being-a-successful-investor-and-ours-too/
-Investing Lessons From Benjamin Graham | The Motley Fool, https://www.fool.com/investing/value/2009/05/05/investing-lessons-from-benjamin-graham.aspx
-The Intelligent Investor by Benjamin Graham, https://novelinvestor.com/notes/the-intelligent-investor-by-benjamin-graham/
+* [Benjamin Graham's Basic Tenets for Being a Successful Investor and Ours Too!] (https://bfsg.com/benjamin-grahams-basic-tenets-for-being-a-successful-investor-and-ours-too/)
+* [Investing Lessons From Benjamin Graham | The Motley Fool] (https://www.fool.com/investing/value/2009/05/05/investing-lessons-from-benjamin-graham.aspx)
+*[The Intelligent Investor by Benjamin Graham] (https://novelinvestor.com/notes/the-intelligent-investor-by-benjamin-graham/)
+
 The Intelligent Investor by Benjamin Graham | Summary & Basic Principles - Study.com, https://study.com/academy/lesson/the-intelligent-investor-by-benjamin-graham-summary.html
 Margin of Safety in Value Investing - GrahamValue, https://www.grahamvalue.com/blog/margin-safety-value-investing
 the FOCUS A Brandes Publication - Private Wealth Management, https://nesbittburns.bmo.com/delegate/services/file/297140/content
