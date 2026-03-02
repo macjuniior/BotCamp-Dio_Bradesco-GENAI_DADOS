@@ -91,9 +91,9 @@ Understanding the Boglehead Strategy - Long Angle, https://www.longangle.com/blo
 <img width="847" height="580" alt="image" src="https://github.com/user-attachments/assets/84a02a34-8b6f-4edc-84fa-06c88f6d6c21" />
 <img width="868" height="608" alt="image" src="https://github.com/user-attachments/assets/ed905a21-4567-4a1f-8635-26ee60030432" />
 <img width="887" height="680" alt="image" src="https://github.com/user-attachments/assets/645d0192-f3db-4ced-8767-d2d972beacc4" />
-
-
-
+<img width="867" height="682" alt="image" src="https://github.com/user-attachments/assets/d5177134-d30b-4257-855b-1c93010e3627" />
+<img width="873" height="699" alt="image" src="https://github.com/user-attachments/assets/00b42e32-3d3c-4de8-bc17-b8811b70dd97" />
+<img width="1845" height="826" alt="image" src="https://github.com/user-attachments/assets/b45ddba8-b424-4a66-866e-8267931cf184" />
 
 ---
 
@@ -117,8 +117,3 @@ O material analisado converge para a ideia de que o investimento bem-sucedido é
 * **Conclusão:** O investidor iniciante deve focar em simplificar o processo, garantindo que suas decisões sejam baseadas em fundamentos sólidos e não em ruídos de mercado ou especulações momentâneas.
 
 ---
-
-## 6. Prompts Reutilizáveis para Revisão
-* *"Resuma os 3 pontos mais importantes da fonte [X] para alguém que nunca investiu."*
-* *"Explique o conceito de Juros Compostos aplicando a lição de paciência de Morgan Housel."*
-* *"Crie um checklist de 5 perguntas que devo fazer antes de comprar uma ação, baseando-se no 'Círculo de Competência'."*
