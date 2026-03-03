@@ -1,11 +1,11 @@
 # Desafio Microsoft Application Platform
+
 ---
 ## Aprendizado
 ### Documentação do Sistema: Cadastro e Listagem de Produtos
 Este documento descreve a arquitetura e o funcionamento do sistema de gerenciamento de produtos desenvolvido com Streamlit, Azure Blob Storage e SQL Server.
---
 
-
+---
 ### 🏗️ Arquitetura do Sistema
 O sistema utiliza uma abordagem híbrida para o armazenamento de dados, otimizando o desempenho e a escalabilidade:
 
@@ -65,7 +65,8 @@ Causa B (Azure): O container do Azure estava configurado como "Privado", impedin
 
 Solução: Correção do atributo para src (source) e alteração do nível de acesso do container no Azure para "Blob (acesso anônimo)".
 
-📝 Funcionalidades Técnicas
+---
+### 📝 Funcionalidades Técnicas
 Upload com Identidade Única
 Para evitar que imagens com o mesmo nome (ex: produto.jpg) se sobrescrevam, o sistema utiliza:
 
@@ -84,8 +85,23 @@ A listagem utiliza o componente st.columns(3) do Streamlit, permitindo uma visua
 
 Dica de Manutenção: Sempre que alterar a estrutura da tabela no SQL Server, lembre-se de atualizar os dicionários e queries nas funções insert_product e list_products.
 
+---
+### 📚💡✅ Desafios e Aprendizados no Microsoft Azure
 
-## Prints
+O maior desafio deste projeto foi o mergulho inicial no ecossistema Microsoft Azure. Sem experiência prévia em cloud, percorri toda a jornada de provisionamento: desde a ativação da assinatura gratuita até a configuração estratégica de recursos essenciais.
+
+Durante o desenvolvimento, implementei e gerenciei:
+
+Grupos de Recursos: Organização lógica do projeto.
+
+Storage Accounts & Containers: Gestão de blobs para armazenamento de imagens.
+
+SQL Database: Estruturação de dados relacionais para os produtos.
+
+Além da configuração, o projeto me exigiu uma curva de aprendizado acelerada em Troubleshooting (resolução de problemas), onde identifiquei e corrigi falhas de sintaxe e mapeamento de colunas entre o código Python e o banco de dados. Foi uma experiência intensa que demonstrou o quão poderosa e objetiva pode ser a computação em nuvem quando aplicada a soluções reais.
+
+---
+## 📎 Prints
 <img width="1489" height="700" alt="image" src="https://github.com/user-attachments/assets/f59a8d4d-cf95-498a-951c-7089dcb9ba06" />
 <img width="1039" height="479" alt="image" src="https://github.com/user-attachments/assets/7f0ba9b1-89c6-467f-82d6-1c62b8bdd6ee" />
 <img width="1064" height="755" alt="image" src="https://github.com/user-attachments/assets/fdc7995f-df22-41cc-a4ed-ce7a64dccf35" />
@@ -94,6 +110,10 @@ Dica de Manutenção: Sempre que alterar a estrutura da tabela no SQL Server, le
 <img width="1360" height="787" alt="image" src="https://github.com/user-attachments/assets/ac88f367-6b99-47ce-82b6-c2f05b8584ea" />
 <img width="636" height="344" alt="image" src="https://github.com/user-attachments/assets/263ee878-7aae-49b9-8556-f61af4b5c312" />
 <img width="1858" height="977" alt="image" src="https://github.com/user-attachments/assets/61a71138-c474-48a2-a8c7-7747467af63e" />
+<img width="1590" height="890" alt="image" src="https://github.com/user-attachments/assets/5e5bf040-a582-43ca-aeac-3efa07dabd6a" />
+<img width="1301" height="602" alt="image" src="https://github.com/user-attachments/assets/569e3cd1-6d83-4aca-afd7-4c6571906dea" />
+
+
 
 
 
