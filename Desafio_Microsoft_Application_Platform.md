@@ -1,11 +1,12 @@
 # Desafio Microsoft Application Platform
 ---
 ## Aprendizado
-
-Documentação do Sistema: Cadastro e Listagem de Produtos
+### Documentação do Sistema: Cadastro e Listagem de Produtos
 Este documento descreve a arquitetura e o funcionamento do sistema de gerenciamento de produtos desenvolvido com Streamlit, Azure Blob Storage e SQL Server.
+--
 
-🏗️ Arquitetura do Sistema
+
+### 🏗️ Arquitetura do Sistema
 O sistema utiliza uma abordagem híbrida para o armazenamento de dados, otimizando o desempenho e a escalabilidade:
 
 Arquivos de Mídia (Imagens): São enviados para o Azure Blob Storage. O armazenamento em nuvem gera uma URL única para cada arquivo.
@@ -36,6 +37,52 @@ A exibição utiliza o sistema de grid do Streamlit:
 Layout Responsivo: Os produtos são organizados em colunas (st.columns(3)), criando uma visualização de "vitrine".
 
 Renderização Customizada: O uso de st.markdown com HTML/CSS permite o controle do tamanho das imagens (object-fit: cover) para que a interface permaneça uniforme, independente do tamanho original da foto enviada.
+
+---
+### ❌ Variação: Erros Encontrados e Soluções
+Esta seção detalha os problemas técnicos enfrentados durante a implementação e como foram corrigidos.
+
+1. Erro de Sintaxe SQL (Código 102)
+O que apareceu: Incorrect syntax near 'f0598ff0'...
+
+Causa: O código estava tentando enviar o objeto do arquivo (o "binário" da imagem) diretamente para a query SQL. O SQL não entende o objeto e gera um erro de sintaxe ao tentar converter caracteres aleatórios.
+
+Solução: Alterado o fluxo para primeiro realizar o upload_blob(file), obter a URL (string) resultante e só então realizar o INSERT no banco.
+
+2. Nome de Coluna Inválido (Código 207)
+O que apareceu: Invalid column name 'image_url'
+
+Causa: Houve uma divergência entre o nome da coluna definida na tabela do SQL Server e o nome utilizado no comando INSERT dentro do Python (ex: o banco esperava imagem_url e o código enviou image_url).
+
+Solução: Sincronização dos nomes das colunas na função insert_product para corresponderem exatamente ao esquema do banco de dados.
+
+3. Falha na Exibição (Imagem Quebrada)
+O que apareceu: Um ícone de link quebrado na lista de produtos.
+
+Causa A (Código): O atributo HTML foi escrito incorretamente como <img scr="...">.
+
+Causa B (Azure): O container do Azure estava configurado como "Privado", impedindo o navegador de carregar a imagem via URL.
+
+Solução: Correção do atributo para src (source) e alteração do nível de acesso do container no Azure para "Blob (acesso anônimo)".
+
+📝 Funcionalidades Técnicas
+Upload com Identidade Única
+Para evitar que imagens com o mesmo nome (ex: produto.jpg) se sobrescrevam, o sistema utiliza:
+
+Python
+blob_name = str(uuid.uuid4()) + file.name
+Isso gera um identificador único para cada upload realizado.
+
+Consultas Parametrizadas
+Para evitar erros de aspas e ataques de SQL Injection, a função de inserção utiliza parâmetros:
+
+Python
+query = "INSERT INTO Produtos (...) VALUES (%s, %d, %s, %s)"
+cursor.execute(query, (product_name, product_price, product_description, image_url))
+Visualização em Grade (Grid)
+A listagem utiliza o componente st.columns(3) do Streamlit, permitindo uma visualização moderna em formato de cards, com tratamento de imagem via CSS para garantir que todas tenham o mesmo tamanho na tela.
+
+Dica de Manutenção: Sempre que alterar a estrutura da tabela no SQL Server, lembre-se de atualizar os dicionários e queries nas funções insert_product e list_products.
 
 
 ## Prints
